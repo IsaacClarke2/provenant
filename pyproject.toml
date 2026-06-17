@@ -20,6 +20,8 @@ dependencies = []  # core is pure stdlib — a neutral adapter, not a heavy stor
 
 [project.optional-dependencies]
 dev = ["pytest>=7"]
+# the LongMemEval/LOCOMO retrieval benchmark needs a real embedder + numpy
+bench = ["fastembed>=0.3", "numpy>=1.21", "huggingface_hub>=0.20"]
 
 [project.urls]
 Homepage = "https://github.com/your-org/provenant"
