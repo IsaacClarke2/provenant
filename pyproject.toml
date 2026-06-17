@@ -3,7 +3,9 @@ requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "provenant"
+# import name stays `provenant`; PyPI distribution name is `provenant-memory`
+# because `provenant` is already taken on PyPI by an unrelated project.
+name = "provenant-memory"
 version = "0.1.0"
 description = "Epistemic memory layer for LLM apps: tag memories by origin and demote model-made-up facts below grounded ones at retrieval time."
 readme = "README.md"

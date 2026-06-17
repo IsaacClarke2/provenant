@@ -8,3 +8,6 @@ dist/
 .venv/
 venv/
 .env
+
+# private launch/marketing drafts — not for the public repo
+launch/

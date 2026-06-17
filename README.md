@@ -115,10 +115,17 @@ evidence is ~94% user-origin); the ~6% of gold that lives in assistant turns is
 exactly where role-based demotion can hurt, and that honest tradeoff is already
 inside these numbers. Raw result: `benchmarks/results/longmemeval_n15.json`.
 
-## Install & run
+## Install
+
+One command, anywhere — zero runtime dependencies:
 
 ```bash
-pip install -e .            # or: pip install provenant  (once published)
+pip install git+https://github.com/IsaacClarke2/provenant
+```
+
+Once on PyPI: `pip install provenant-memory` (import stays `import provenant`).
+
+```bash
 python -m provenant.bench   # the before/after table
 python examples/quickstart.py
 python -m pytest -q         # 27 tests
