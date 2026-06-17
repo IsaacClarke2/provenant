@@ -1,9 +1,16 @@
-# Provenant
+<div align="center">
+  <img src="assets/hero.svg" alt="Provenant" width="100%">
+</div>
 
-**An epistemic memory layer for LLM apps.** Tag every memory with *where it came
-from*, fold a trust weight into your existing retrieval ranking, and present
-grounded facts separately from inferred ones — so your model stops confidently
-repeating things the user never said.
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-3fb950.svg" alt="License: MIT"></a>
+  <img src="https://img.shields.io/badge/python-3.8%2B-58a6ff.svg" alt="Python 3.8+">
+  <img src="https://img.shields.io/badge/tests-27%20passing-3fb950.svg" alt="tests: 27 passing">
+  <img src="https://img.shields.io/badge/dependencies-zero-2dd4bf.svg" alt="zero dependencies">
+  <img src="https://img.shields.io/badge/status-research%20preview-d29922.svg" alt="research preview">
+</p>
+
+<p align="center"><b>An epistemic memory layer for LLM apps.</b> Tag every memory with <em>where it came from</em>, fold a trust weight into your existing retrieval ranking, and present grounded facts separately from inferred ones — so your model stops confidently repeating things the user never said.</p>
 
 Provenant is a **neutral adapter**: it works *with* your memory store (mem0,
 LangChain, Letta, a raw vector DB), never as a replacement. The core is pure
@@ -22,6 +29,10 @@ reranked = provenance_rerank(
 That's the whole integration. A model-generated guess that happens to be
 textually similar to the query now ranks **below** a fact the user actually
 stated.
+
+<div align="center">
+  <img src="assets/how-it-works.svg" alt="How Provenant reranks memory by origin" width="100%">
+</div>
 
 ---
 
@@ -76,6 +87,10 @@ haystack (~493 turns/question), a real embedder (fastembed `bge-small`), origin
 tagged by conversational role (user turns grounded, assistant turns
 model-generated), no LLM and no faked numbers. Reranking OFF vs ON, on the first
 15 questions:
+
+<div align="center">
+  <img src="assets/benchmark.svg" alt="LongMemEval benchmark: provenance vs baseline" width="680">
+</div>
 
 | metric | base | + provenance | Δ |
 |---|---|---|---|

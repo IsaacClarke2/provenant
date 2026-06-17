@@ -1,0 +1,46 @@
+<svg width="1200" height="300" viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Provenant — epistemic memory layer for LLM apps">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2dd4bf"/>
+      <stop offset="1" stop-color="#58a6ff"/>
+    </linearGradient>
+    <style>
+      .t { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    </style>
+  </defs>
+  <rect width="1200" height="300" fill="url(#bg)"/>
+  <rect width="1200" height="6" fill="url(#accent)"/>
+
+  <!-- wordmark -->
+  <text x="72" y="118" class="t" font-size="74" font-weight="800" fill="#e6edf3" letter-spacing="-2">Provenant</text>
+  <text x="76" y="166" class="t" font-size="27" font-weight="600" fill="#c9d1d9">Your AI stops repeating things you never said.</text>
+  <text x="76" y="205" class="t" font-size="17" fill="#8b949e">Epistemic memory layer for LLM apps — tag each memory&#8217;s origin, then demote</text>
+  <text x="76" y="229" class="t" font-size="17" fill="#8b949e">model-made-up facts below grounded ones at retrieval time.</text>
+
+  <!-- right motif: a re-ranked stack -->
+  <g transform="translate(880,70)">
+    <!-- demoted confabulation -->
+    <g transform="translate(40,150)" opacity="0.55">
+      <rect width="240" height="44" rx="9" fill="#1c1f24" stroke="#f85149" stroke-width="1.5"/>
+      <circle cx="22" cy="22" r="6" fill="#f85149"/>
+      <text x="40" y="27" class="t" font-size="14" fill="#f0c0bd">model-generated &#183; 0.30</text>
+      <text x="206" y="27" class="t" font-size="16" fill="#f85149">&#8595;</text>
+    </g>
+    <!-- grounded, lifted -->
+    <g transform="translate(0,72)">
+      <rect width="240" height="44" rx="9" fill="#16221b" stroke="#3fb950" stroke-width="1.5"/>
+      <circle cx="22" cy="22" r="6" fill="#3fb950"/>
+      <text x="40" y="27" class="t" font-size="14" fill="#a7e3b4">user &#183; 0.97</text>
+    </g>
+    <g transform="translate(0,0)">
+      <rect width="240" height="44" rx="9" fill="#16221b" stroke="#3fb950" stroke-width="1.5"/>
+      <circle cx="22" cy="22" r="6" fill="#3fb950"/>
+      <text x="40" y="27" class="t" font-size="14" fill="#a7e3b4">user &#183; 0.97</text>
+      <text x="206" y="27" class="t" font-size="16" fill="#3fb950">&#8593;</text>
+    </g>
+  </g>
+</svg>

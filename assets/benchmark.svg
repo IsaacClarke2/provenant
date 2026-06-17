@@ -1,0 +1,35 @@
+<svg width="800" height="390" viewBox="0 0 800 390" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="LongMemEval benchmark: provenance vs baseline">
+  <defs>
+    <style>.t { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }</style>
+  </defs>
+  <rect width="800" height="390" rx="14" fill="#0d1117"/>
+  <text x="40" y="44" class="t" font-size="19" font-weight="700" fill="#e6edf3">LongMemEval retrieval &#8212; provenance vs baseline</text>
+  <text x="40" y="66" class="t" font-size="13" fill="#8b949e">15 questions &#183; real embedder (bge-small) &#183; no LLM</text>
+
+  <!-- legend -->
+  <rect x="560" y="34" width="14" height="14" rx="3" fill="#6e7681"/>
+  <text x="580" y="46" class="t" font-size="13" fill="#8b949e">base</text>
+  <rect x="630" y="34" width="14" height="14" rx="3" fill="#2dd4bf"/>
+  <text x="650" y="46" class="t" font-size="13" fill="#8b949e">+ provenance</text>
+
+  <!-- baseline axis -->
+  <line x1="60" y1="300" x2="760" y2="300" stroke="#30363d" stroke-width="1.5"/>
+
+  <!-- Group 1: recall@5 (higher better) -->
+  <rect x="150" y="156" width="64" height="144" rx="4" fill="#6e7681"/>
+  <text x="182" y="146" class="t" font-size="16" font-weight="700" fill="#c9d1d9" text-anchor="middle">0.60</text>
+  <rect x="234" y="108" width="64" height="192" rx="4" fill="#2dd4bf"/>
+  <text x="266" y="98" class="t" font-size="16" font-weight="700" fill="#7defd9" text-anchor="middle">0.80</text>
+  <text x="224" y="324" class="t" font-size="14" font-weight="600" fill="#e6edf3" text-anchor="middle">Answer in top-5</text>
+  <text x="224" y="344" class="t" font-size="12" fill="#3fb950" text-anchor="middle">recall@5 &#183; higher is better &#183; +20pp</text>
+
+  <!-- Group 2: confabulation in top-5 (lower better) -->
+  <rect x="490" y="207" width="64" height="93" rx="4" fill="#6e7681"/>
+  <text x="522" y="197" class="t" font-size="16" font-weight="700" fill="#c9d1d9" text-anchor="middle">0.39</text>
+  <rect x="574" y="294" width="64" height="6" rx="3" fill="#2dd4bf"/>
+  <text x="606" y="286" class="t" font-size="16" font-weight="700" fill="#7defd9" text-anchor="middle">0.00</text>
+  <text x="564" y="324" class="t" font-size="14" font-weight="600" fill="#e6edf3" text-anchor="middle">Made-up facts in top-5</text>
+  <text x="564" y="344" class="t" font-size="12" fill="#3fb950" text-anchor="middle">lower is better &#183; 39% &#8594; 0%</text>
+
+  <text x="400" y="378" class="t" font-size="11" fill="#6e7681" text-anchor="middle">Directional 15-question sample &#8212; not the full 500-question run. Raw: benchmarks/results/longmemeval_n15.json</text>
+</svg>

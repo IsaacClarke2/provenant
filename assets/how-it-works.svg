@@ -1,0 +1,77 @@
+<svg width="1040" height="470" viewBox="0 0 1040 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="How Provenant reranks memory by origin">
+  <defs>
+    <style>
+      .t { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    </style>
+  </defs>
+  <rect width="1040" height="470" rx="14" fill="#0d1117"/>
+
+  <!-- LEFT: plain retrieval -->
+  <text x="50" y="46" class="t" font-size="18" font-weight="700" fill="#e6edf3">Plain retrieval</text>
+  <text x="50" y="68" class="t" font-size="13" fill="#8b949e">ranked by similarity score</text>
+
+  <!-- card: confabulation on top -->
+  <g transform="translate(40,92)">
+    <rect width="360" height="68" rx="12" fill="#161b22" stroke="#30363d"/>
+    <rect width="6" height="68" rx="3" fill="#f85149"/>
+    <text x="24" y="42" class="t" font-size="25" font-weight="700" fill="#f0f6fc">0.88</text>
+    <text x="96" y="28" class="t" font-size="12" fill="#f85149">model-generated</text>
+    <text x="96" y="50" class="t" font-size="15" fill="#c9d1d9">&#8220;daughter is Lena&#8221;</text>
+    <text x="332" y="41" class="t" font-size="20" fill="#f85149">&#10007;</text>
+  </g>
+  <g transform="translate(40,172)">
+    <rect width="360" height="68" rx="12" fill="#161b22" stroke="#30363d"/>
+    <rect width="6" height="68" rx="3" fill="#3fb950"/>
+    <text x="24" y="42" class="t" font-size="25" font-weight="700" fill="#f0f6fc">0.62</text>
+    <text x="96" y="28" class="t" font-size="12" fill="#3fb950">user</text>
+    <text x="96" y="50" class="t" font-size="15" fill="#c9d1d9">&#8220;daughter is Mira&#8221;</text>
+  </g>
+  <g transform="translate(40,252)">
+    <rect width="360" height="68" rx="12" fill="#161b22" stroke="#30363d"/>
+    <rect width="6" height="68" rx="3" fill="#3fb950"/>
+    <text x="24" y="42" class="t" font-size="25" font-weight="700" fill="#f0f6fc">0.55</text>
+    <text x="96" y="28" class="t" font-size="12" fill="#3fb950">user</text>
+    <text x="96" y="50" class="t" font-size="15" fill="#c9d1d9">&#8220;has a daughter&#8221;</text>
+  </g>
+  <text x="40" y="360" class="t" font-size="14" fill="#f85149">&#10007;  a made-up fact tops the context</text>
+
+  <!-- CENTER arrow -->
+  <g transform="translate(440,196)">
+    <text x="60" y="6" class="t" font-size="13" font-weight="600" fill="#8b949e" text-anchor="middle">score</text>
+    <text x="60" y="26" class="t" font-size="15" font-weight="700" fill="#2dd4bf" text-anchor="middle">&#215; origin</text>
+    <text x="60" y="46" class="t" font-size="15" font-weight="700" fill="#2dd4bf" text-anchor="middle">trust</text>
+    <path d="M14 70 L106 70" stroke="#2dd4bf" stroke-width="3" fill="none"/>
+    <path d="M96 62 L110 70 L96 78 Z" fill="#2dd4bf"/>
+  </g>
+
+  <!-- RIGHT: with provenant -->
+  <text x="640" y="46" class="t" font-size="18" font-weight="700" fill="#e6edf3">With Provenant</text>
+  <text x="640" y="68" class="t" font-size="13" fill="#8b949e">similarity &#215; provenance weight</text>
+
+  <g transform="translate(640,92)">
+    <rect width="360" height="68" rx="12" fill="#16221b" stroke="#264a32"/>
+    <rect width="6" height="68" rx="3" fill="#3fb950"/>
+    <text x="24" y="42" class="t" font-size="25" font-weight="700" fill="#f0f6fc">0.60</text>
+    <text x="96" y="28" class="t" font-size="12" fill="#3fb950">user &#183; &#215;0.97</text>
+    <text x="96" y="50" class="t" font-size="15" fill="#c9d1d9">&#8220;daughter is Mira&#8221;</text>
+    <text x="330" y="41" class="t" font-size="19" fill="#3fb950">&#10003;</text>
+  </g>
+  <g transform="translate(640,172)">
+    <rect width="360" height="68" rx="12" fill="#16221b" stroke="#264a32"/>
+    <rect width="6" height="68" rx="3" fill="#3fb950"/>
+    <text x="24" y="42" class="t" font-size="25" font-weight="700" fill="#f0f6fc">0.53</text>
+    <text x="96" y="28" class="t" font-size="12" fill="#3fb950">user &#183; &#215;0.97</text>
+    <text x="96" y="50" class="t" font-size="15" fill="#c9d1d9">&#8220;has a daughter&#8221;</text>
+  </g>
+  <g transform="translate(640,252)" opacity="0.6">
+    <rect width="360" height="68" rx="12" fill="#161b22" stroke="#30363d"/>
+    <rect width="6" height="68" rx="3" fill="#f85149"/>
+    <text x="24" y="42" class="t" font-size="25" font-weight="700" fill="#f0f6fc">0.26</text>
+    <text x="96" y="28" class="t" font-size="12" fill="#f85149">model-generated &#183; &#215;0.30</text>
+    <text x="96" y="50" class="t" font-size="15" fill="#c9d1d9">&#8220;daughter is Lena&#8221;</text>
+    <text x="330" y="41" class="t" font-size="14" fill="#f85149">&#8595;</text>
+  </g>
+  <text x="640" y="360" class="t" font-size="14" fill="#3fb950">&#10003;  the user&#8217;s fact is back on top</text>
+
+  <text x="520" y="438" class="t" font-size="13" fill="#6e7681" text-anchor="middle">Origin is structural (set at write-time) &#8212; no text parsing, no LLM, no regex. Two-line drop-in on your existing store.</text>
+</svg>
