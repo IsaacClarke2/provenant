@@ -24,7 +24,9 @@ dev = ["pytest>=7"]
 bench = ["fastembed>=0.3", "numpy>=1.21", "huggingface_hub>=0.20"]
 
 [project.urls]
-Homepage = "https://github.com/your-org/provenant"
+Homepage = "https://github.com/IsaacClarke2/provenant"
+Repository = "https://github.com/IsaacClarke2/provenant"
+Issues = "https://github.com/IsaacClarke2/provenant/issues"
 
 [tool.setuptools.packages.find]
 include = ["provenant*"]
