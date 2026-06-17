@@ -69,13 +69,36 @@ Provenant — confabulation benchmark (offline, deterministic)
   absolute reduction                      :  83%
 ```
 
-**Honesty boundary:** this built-in benchmark is a *deterministic proof of
-mechanism* on synthetic scenarios — **not** LongMemEval/LOCOMO results. It is
-designed to be realistic, not flattering: one scenario is deliberately hard
-enough that provenance does **not** fully fix it (hence 17%, not 0%). The real
-launch number requires the external dataset, a real embedder, and an LLM judge;
-wire it through `provenant.bench.confab.LongMemEvalAdapter` — which deliberately
-raises `NotImplementedError` rather than fake a score.
+### Real data: LongMemEval retrieval
+
+`provenant/bench/longmemeval.py` runs the real thing — the official LongMemEval
+haystack (~493 turns/question), a real embedder (fastembed `bge-small`), origin
+tagged by conversational role (user turns grounded, assistant turns
+model-generated), no LLM and no faked numbers. Reranking OFF vs ON, on the first
+15 questions:
+
+| metric | base | + provenance | Δ |
+|---|---|---|---|
+| gold recall@5 | 0.600 | **0.800** | **+0.200** |
+| gold MRR | 0.386 | 0.456 | +0.070 |
+| assistant turns in top-5 | 0.387 | **0.000** | **−0.387** |
+
+Provenance lifts the user-grounded answer into the top-5 (+20 pp) and evicts
+model-generated turns from the context entirely. Reproduce:
+
+```bash
+pip install "provenant[bench]"
+# download longmemeval_s from HF dataset xiaowu0162/longmemeval
+python -m provenant.bench.longmemeval --data longmemeval_s --limit 15 --threads 2
+```
+
+**Honesty boundary:** the offline `python -m provenant.bench` number above is a
+*synthetic proof of mechanism*; the LongMemEval number is a **15-question
+sample** (CPU, single box) — directional, not the full 500-question run. Origin
+here is role-based, a fair proxy because LongMemEval answers are user-stated (gold
+evidence is ~94% user-origin); the ~6% of gold that lives in assistant turns is
+exactly where role-based demotion can hurt, and that honest tradeoff is already
+inside these numbers. Raw result: `benchmarks/results/longmemeval_n15.json`.
 
 ## Install & run
 

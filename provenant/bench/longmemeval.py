@@ -130,12 +130,13 @@ def fastembed_embedder(
     model = TextEmbedding(model_name=model_name, threads=threads)
 
     def embed(texts: Sequence[str]):
-        # parallel=0 disables fastembed's internal multiprocessing — otherwise it
-        # forks a worker per CPU, each reloading the model (memory x N) and
-        # spiking load on a small box. Single process + a modest batch keeps the
-        # peak bounded, which matters when co-located with a live service.
+        # parallel=None is the single-process path. (fastembed quirk: parallel=0
+        # means "use ALL cores", forking a worker per CPU that each reload the
+        # model -> memory x N + load spike, and the forkserver workers outlive a
+        # killed parent as orphans. None keeps it one process — essential when
+        # co-located with a live service on a small box.) threads caps onnx.
         vecs = np.array(
-            list(model.embed(list(texts), parallel=0, batch_size=64)),
+            list(model.embed(list(texts), parallel=None, batch_size=32)),
             dtype=np.float32,
         )
         norms = np.linalg.norm(vecs, axis=1, keepdims=True)

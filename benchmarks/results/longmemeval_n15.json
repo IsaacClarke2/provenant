@@ -1,0 +1,11 @@
+{
+  "n_questions": 15,
+  "k": 5,
+  "model": "BAAI/bge-small-en-v1.5",
+  "recall_base": 0.6,
+  "recall_prov": 0.8,
+  "mrr_base": 0.3861288983347807,
+  "mrr_prov": 0.4559296789551566,
+  "assistant_base": 0.38666666666666677,
+  "assistant_prov": 0.0
+}
